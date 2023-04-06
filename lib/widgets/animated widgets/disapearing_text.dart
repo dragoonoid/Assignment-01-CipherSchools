@@ -1,4 +1,4 @@
-import 'package:cipher_schools/utils/test_data.dart';
+import 'package:cipher_schools/themes/home_theme.dart';
 import 'package:flutter/material.dart';
 
 class DisapearingText extends StatefulWidget {
@@ -35,7 +35,7 @@ class _DisapearingTextState extends State<DisapearingText>
       builder: ((context, child) {
         return Text(
           '${widget.s.substring(0, animation.value)} |',
-          style: TextStyle(color: orange),
+          style: textStyleOrange2,
         );
       }),
     );

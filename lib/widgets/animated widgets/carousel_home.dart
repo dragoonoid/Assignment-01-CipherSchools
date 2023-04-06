@@ -37,11 +37,12 @@ class CarouselHome extends StatelessWidget {
                 ),
               ),
               const Spacer(
-                flex: 3,
+                flex: 2,
               ),
               Text(
                 e['head'] ?? '',
                 style: textStyleWhite1,
+                overflow: TextOverflow.ellipsis,
               ),
               const Spacer(
                 flex: 1,
@@ -49,6 +50,8 @@ class CarouselHome extends StatelessWidget {
               Text(
                 e['subtitle'] ?? '',
                 style: textStyleWhite3,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),

@@ -39,7 +39,7 @@ class _StudentsFeedbackState extends State<StudentsFeedback> {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(
           widget.feedbackHeadline[0],
-          style: textStyleOrange3,
+          style: textStyleOrange2,
         ),
         const SizedBox(
           height: 10,
@@ -47,6 +47,7 @@ class _StudentsFeedbackState extends State<StudentsFeedback> {
         Text(
           widget.feedbackHeadline[1],
           style: textStyleWhite1,
+          maxLines: 1,
         ),
         const SizedBox(
           height: 10,
@@ -54,6 +55,7 @@ class _StudentsFeedbackState extends State<StudentsFeedback> {
         Text(
           widget.feedbackHeadline[2],
           style: textStyleWhite2,
+          maxLines: 5,
         ),
         const SizedBox(
           height: 20,

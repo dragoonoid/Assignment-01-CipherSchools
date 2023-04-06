@@ -1,3 +1,4 @@
+import 'package:cipher_schools/themes/home_theme.dart';
 import 'package:cipher_schools/utils/test_data.dart';
 import 'package:flutter/material.dart';
 
@@ -20,9 +21,7 @@ class Stars extends StatelessWidget {
             return const Center(
               child: Text(
                 'Ratings',
-                style: TextStyle(
-                  fontSize: 15,
-                ),
+                style: textStyleBlack3,overflow: TextOverflow.ellipsis,
               ),
             );
           }

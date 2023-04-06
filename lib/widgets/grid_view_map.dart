@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:cipher_schools/utils/test_data.dart';
+import 'package:cipher_schools/themes/home_theme.dart';
 import 'package:flutter/material.dart';
 
 class GridViewMap extends StatelessWidget {
@@ -15,7 +15,7 @@ class GridViewMap extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: min(size.height / 2, 300),
-          childAspectRatio: 3 /1.5,
+          childAspectRatio: 3 / 1.5,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20),
       itemCount: mp.length,
@@ -26,14 +26,15 @@ class GridViewMap extends StatelessWidget {
           children: [
             Text(
               mp[i]['head'] ?? "empty",
-              style:  TextStyle(
-                  fontSize: 30,
-                  color: orange,
-                  fontWeight: FontWeight.bold),
+              style: textStyleOrange1.copyWith(fontSize: 30),
+              overflow: TextOverflow.ellipsis,
             ),
             Text(
               mp[i]['subtitle'] ?? "empty",
               textAlign: TextAlign.center,
+              style: textStyleBlack3,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             )
           ],
         ));

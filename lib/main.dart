@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => const Home(),
-        '/courses': (context)=> const CoursesView()
+        '/courses': (context)=> const CoursesView()// TODO controllers, splash
       },
     );
   }

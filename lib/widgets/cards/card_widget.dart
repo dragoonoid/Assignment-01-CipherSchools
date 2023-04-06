@@ -36,75 +36,59 @@ class _CardWidgetState extends State<CardWidget> {
             height: size.height * 0.3,
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              gradient: gradient
-            ),
+                borderRadius: BorderRadius.circular(12), gradient: gradient),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
                   widget.s['head'] ?? "null",
-                  style: const TextStyle(
-                    color: Colors.white70,
-                    fontSize: 15,
-                  ),
+                  style: textStyleWhite3.copyWith(color: Colors.white70),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 Text(
                   widget.s['subtitle'] ?? "null",
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: textStyleWhite1.copyWith(fontSize: 24),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                MouseRegion(
-                  onEnter: (_) => setState(() {
-                    isHovering = true;
-                  }),
-                  onExit: (_) => setState(() {
-                    isHovering = false;
-                  }),
-                  child: Container(
-                    // width: MediaQuery.of(context).size.width*0.35,
-                    height: MediaQuery.of(context).size.height * 0.06,
-                    margin: const EdgeInsets.only(bottom: 10),
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: isHovering ? Colors.white : null,// TODO fix hovering
-                      border: Border.all(
-                        width: 1,
-                        color: Colors.white70,
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  margin: const EdgeInsets.only(bottom: 10),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 10, horizontal: 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.white70,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        widget.s['user'] ?? "null",
+                        style: textStyleWhite3.copyWith(
+                          fontWeight: FontWeight.w500,
+                        ),
+                        overflow: TextOverflow.ellipsis,
                       ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          widget.s['user'] ?? "null",
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Icon(
-                          widget.icon,
-                          color: Colors.white,
-                        ),
-                      ],
-                    ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Icon(
+                        widget.icon,
+                        color: Colors.white,
+                      ),
+                    ],
                   ),
                 ),
               ],

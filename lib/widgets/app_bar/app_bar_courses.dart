@@ -1,11 +1,20 @@
 import 'package:cipher_schools/themes/home_theme.dart';
 import 'package:cipher_schools/utils/test_data.dart';
+import 'package:cipher_schools/utils/url.dart';
 import 'package:flutter/material.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class AppBarCourses extends StatefulWidget implements PreferredSizeWidget {
   final VoidCallback showDrawer;
-  const AppBarCourses({Key? key, required this.showDrawer}) : super(key: key);
+  final VoidCallback changeDark;
+  final bool isDark;
+  final VoidCallback showSearchBar;
+  const AppBarCourses(
+      {Key? key,
+      required this.showDrawer,
+      required this.changeDark,
+      required this.isDark,
+      required this.showSearchBar})
+      : super(key: key);
 
   @override
   State<AppBarCourses> createState() => _AppBarCoursesState();
@@ -15,12 +24,11 @@ class AppBarCourses extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _AppBarCoursesState extends State<AppBarCourses> {
-  bool isDark = false;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: !widget.isDark ? Colors.white : black,
       leading: Padding(
         padding: const EdgeInsets.all(7),
         child: Image.asset(
@@ -31,9 +39,11 @@ class _AppBarCoursesState extends State<AppBarCourses> {
       titleSpacing: 3,
       title: SizedBox(
         width: size.width * 0.3,
-        child: AutoSizeText(
+        child: Text(
           'CipherSchools',
-          style: textStyleBlack2.copyWith(fontSize: 19),
+          style: !widget.isDark
+              ? textStyleBlack2.copyWith(fontSize: 19)
+              : textStyleWhite2.copyWith(fontSize: 19),
           overflow: TextOverflow.clip,
         ),
       ),
@@ -45,18 +55,21 @@ class _AppBarCoursesState extends State<AppBarCourses> {
             children: [
               Expanded(
                 child: Icon(
-                  Icons.browse_gallery,
-                  color: black,
+                  Icons.navigation_outlined,
+                  color: !widget.isDark ? black : Colors.white,
                 ),
               ),
-              const Expanded(
+              Expanded(
+                flex: 1,
                 child: Center(
-                  child: AutoSizeText(
-                    'Browse',
-                    minFontSize: 10,
-                    style: textStyleBlack3,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                  child: GestureDetector(
+                    onTap: widget.showDrawer,
+                    child: Text(
+                      'Browse',
+                      style: !widget.isDark ? textStyleBlack3 : textStyleWhite3,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ),
               ),
@@ -64,30 +77,36 @@ class _AppBarCoursesState extends State<AppBarCourses> {
                 child: IconButton(
                   onPressed: widget.showDrawer,
                   icon: const Icon(Icons.keyboard_arrow_down_outlined),
-                  color: black,
+                  color: !widget.isDark ? black : Colors.white,
                 ),
               ),
               Expanded(
                 child: Switch(
-                    value: isDark,
-                    onChanged: (i) {
-                      setState(() {
-                        isDark = i;
-                      });
-                    }),
+                  value: widget.isDark,
+                  onChanged: (_) {
+                    widget.changeDark();
+                  },
+                  activeThumbImage:  NetworkImage(moon,),
+                  activeTrackColor: Colors.black,
+                  inactiveTrackColor: Colors.grey[200],
+                  inactiveThumbImage:  NetworkImage(sun),
+                  activeColor: Colors.black,
+                ),
               ),
               Expanded(
                 child: Icon(
                   Icons.notifications_outlined,
-                  color: black,
+                  color: !widget.isDark ? black : Colors.white,
                 ),
               ),
               Expanded(
-                child: Icon(
+                  child: IconButton(
+                icon: Icon(
                   Icons.search,
-                  color: black,
+                  color: !widget.isDark ? black : Colors.white,
                 ),
-              ),
+                onPressed: widget.showSearchBar,
+              )),
               const SizedBox(
                 width: 5,
               ),

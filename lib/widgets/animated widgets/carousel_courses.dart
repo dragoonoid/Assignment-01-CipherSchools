@@ -26,16 +26,13 @@ class _CarouselCoursesState extends State<CarouselCourses> {
             items: widget.mp.map((e) {
               return Stack(
                 children: [
-                  Container(
+                  Image(
                     width: double.infinity,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          e['image'] ?? '',
-                        ),
-                        fit: BoxFit.cover,
-                      ),
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                      e['image'] ?? "",
                     ),
+                    height: size.height,
                   ),
                   Container(
                     width: double.infinity,
@@ -54,7 +51,6 @@ class _CarouselCoursesState extends State<CarouselCourses> {
                         Text(
                           e['head'] ?? '',
                           maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
                           style: textStyleWhite2,
                         ),
                         Container(
@@ -65,7 +61,6 @@ class _CarouselCoursesState extends State<CarouselCourses> {
                           padding: const EdgeInsets.all(5),
                           child: Text(
                             e['tag'] ?? '',
-                            maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: textStyleWhite3,
                           ),
@@ -83,7 +78,6 @@ class _CarouselCoursesState extends State<CarouselCourses> {
                             ),
                             Text(
                               e['mentor'] ?? '',
-                              maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: textStyleWhite3,
                             ),
@@ -151,33 +145,5 @@ class _CarouselCoursesState extends State<CarouselCourses> {
         ),
       ],
     );
-  }
-}
-
-class PageIndicator extends StatelessWidget {
-  final int l;
-  final int i;
-  const PageIndicator({Key? key, required this.l, required this.i})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (_, index) {
-          if (i == index) {
-            return Icon(
-              Icons.blur_linear_outlined,
-              color: orange,
-            );
-          } else {
-            return const Icon(
-              Icons.blur_linear_outlined,
-              color: Colors.white30,
-            );
-          }
-        },
-        itemCount: l);
   }
 }

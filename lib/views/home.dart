@@ -63,12 +63,15 @@ class _HomeState extends State<Home> {
           : null,
       appBar: AppBarHome(
         func: () {
-                  setState(() {
-                    showNavContainer = !showNavContainer;
-                  });
-                },showNavContainer: showNavContainer,
+          setState(() {
+            showNavContainer = !showNavContainer;
+          });
+        },
+        showNavContainer: showNavContainer,
       ),
-      bottomNavigationBar: const BottomBar(selected: 0,),
+      bottomNavigationBar: const BottomBar(
+        selected: 0,isDark: false,
+      ),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -85,16 +88,11 @@ class _HomeState extends State<Home> {
                     maxLines: 1,
                     text: TextSpan(
                       text: "Welcome to ",
-                      style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold),
+                      style: textStyleBlack1.copyWith(fontSize: 40),
                       children: <TextSpan>[
                         TextSpan(
                           text: 'the',
-                          style: TextStyle(
-                            color: orange,
-                          ),
+                          style: textStyleOrange1.copyWith(fontSize: 40),
                         ),
                       ],
                     ),
@@ -103,21 +101,19 @@ class _HomeState extends State<Home> {
                     maxLines: 1,
                     text: TextSpan(
                       text: "Future",
-                      style: TextStyle(
-                          color: orange,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold),
-                      children: const <TextSpan>[
+                      style: textStyleOrange1.copyWith(fontSize: 40),
+                      children: <TextSpan>[
                         TextSpan(
                           text: ' of Learning!',
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
+                          style: textStyleBlack1.copyWith(fontSize: 40),
                         ),
                       ],
                     ),
                   ),
-                  const Text('Start Learning by best creators for'),
+                  const Text(
+                    'Start Learning by best creators for',
+                    style: textStyleBlack2,
+                  ),
                   const Center(
                     child: DisapearingText(
                       s: 'absolutely Free',
@@ -141,9 +137,18 @@ class _HomeState extends State<Home> {
                       Column(
                         // 50 + mentors
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text('50+'),
-                          Text('Mentors'),
+                        children: [
+                          Text(
+                            '50+',
+                            style: textStyleBlack2.copyWith(
+                                fontWeight: FontWeight.bold),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          const Text(
+                            'Mentors',
+                            style: textStyleBlack3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ],
                       ),
                       SizedBox(
@@ -158,9 +163,14 @@ class _HomeState extends State<Home> {
                       Column(
                         //rating
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text('4.8/5'),
-                          Stars(
+                        children: [
+                          Text(
+                            '4.8/5',
+                            style: textStyleBlack2.copyWith(
+                                fontWeight: FontWeight.bold),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          const Stars(
                             st: 4.6,
                             len: 6,
                           ),
@@ -178,13 +188,20 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           color: Colors.orange),
-                      child: const Center(
-                        child: Text(
-                          'Start Learning Now →',
-                          style: TextStyle(
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              'Start Learning Now ',
+                              style: textStyleWhite1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            Icon(
+                              Icons.forward,
                               color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -213,11 +230,12 @@ class _HomeState extends State<Home> {
                       'Creators from',
                       style: textStyleBlack1,
                     ),
-                  ),// TODO creators from use list tile
+                  ), 
                   Container(
                     margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     height: size.height * 0.1,
-                    child: Center(child: CreatorsFromListView(list: creatorsFrom)),
+                    child:
+                        Center(child: CreatorsFromListView(list: creatorsFrom)),
                   ),
                   const Text(
                     'Bests are here',
@@ -225,7 +243,10 @@ class _HomeState extends State<Home> {
                   ),
                   CategoriesSlider(s: sections),
                   const SizedBox(height: 30),
-                  CourseCardGridView(mp: courses),
+                  CourseCardGridView(
+                    mp: courses,
+                    isDark: false,
+                  ),
                   const SizedBox(height: 30),
                   const Center(
                     child: Text(
@@ -248,7 +269,13 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          (showNavContainer ? DrawerMenu(size: size,s:drawerList) : Container()),
+          (showNavContainer
+              ? DrawerMenu(
+                  size: size,
+                  s: drawerList,
+                  isDark: false,
+                )
+              : Container()),
         ],
       ),
     );

@@ -27,11 +27,11 @@ class CardFeedbackItem extends StatelessWidget {
               children: [
                 Text(
                   mp['name'] ?? '',
-                  style: textStyleOrange3,
+                  style: textStyleOrange2,
                 ),
                 Text(
                   mp['head'] ?? '',
-                  style: textStyleBlack2.copyWith(fontWeight: FontWeight.w400),
+                  style: textStyleBlack2.copyWith(fontWeight: FontWeight.w500),
                 ),
               ],
             ),
@@ -41,6 +41,7 @@ class CardFeedbackItem extends StatelessWidget {
         Text(
           mp['feedback'] ?? '',
           style: textStyleBlack3,
+          maxLines: 3,
         ),
         const Spacer(),
         Row(
@@ -49,24 +50,37 @@ class CardFeedbackItem extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Content'),
+                const Text(
+                  'Content:',
+                  style: textStyleBlack2,
+                ),
                 Stars(st: double.parse(mp['Content'] ?? '3'), len: 5),
                 const SizedBox(
                   height: 5,
                 ),
-                const Text('Platform'),
+                const Text(
+                  'Platform:',
+                  style: textStyleBlack2,
+                ),
                 Stars(st: double.parse(mp['Platform'] ?? '3'), len: 5)
               ],
             ),
+            const Spacer(),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Mentor'),
+                const Text(
+                  'Mentor:',
+                  style: textStyleBlack2,
+                ),
                 Stars(st: double.parse(mp['Mentor'] ?? '3'), len: 5),
                 const SizedBox(
                   height: 5,
                 ),
-                const Text('Community'),
+                const Text(
+                  'Community:',
+                  style: textStyleBlack2,
+                ),
                 Stars(st: double.parse(mp['Community'] ?? '3'), len: 5)
               ],
             ),

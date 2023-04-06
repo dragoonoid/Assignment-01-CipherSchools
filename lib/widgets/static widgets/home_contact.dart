@@ -1,7 +1,7 @@
 import 'package:cipher_schools/themes/home_theme.dart';
 import 'package:cipher_schools/utils/test_data.dart';
 import 'package:flutter/material.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+//import 'package:auto_size_text/auto_size_text.dart';
 
 class HomeContact extends StatelessWidget {
   const HomeContact({Key? key}) : super(key: key);
@@ -13,9 +13,7 @@ class HomeContact extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          // TODO give -ve margin
           color: black,
-          //height: size.height * 0.8,
           width: double.infinity,
           padding: const EdgeInsets.only(top: 15, left: 5),
           child: Column(
@@ -31,13 +29,13 @@ class HomeContact extends StatelessWidget {
                     'on  ',
                     style: textStyleWhite1,
                   ),
-                  const Icon(
+                  Icon(
                     Icons.discord,
-                    color: Colors.deepPurple,
+                    color: Colors.deepPurple[400],
                   ),
                   Text('  Discord',
-                      style:
-                          textStyleWhite1.copyWith(color: Colors.deepPurple)),
+                      style: textStyleWhite1.copyWith(
+                          color: Colors.deepPurple[400])),
                 ],
               ),
               const SizedBox(
@@ -46,6 +44,7 @@ class HomeContact extends StatelessWidget {
               const Text(
                 'Come together and make a difference! Join our community for an interactive learning experience!',
                 style: textStyleWhite2,
+                maxLines: 10,
               ),
               Container(
                 margin: const EdgeInsets.only(top: 10, bottom: 10),
@@ -82,6 +81,7 @@ class HomeContact extends StatelessWidget {
         const Text(
           'Cipherschools is a bootstrapped educational video streaming platform in India that is connecting passionate unskilled students to skilled Industry experts to fulfill their career dreams.',
           style: textStyleBlack3,
+          maxLines: 10,
         ),
         const SizedBox(
           height: 20,
@@ -92,7 +92,7 @@ class HomeContact extends StatelessWidget {
             SizedBox(
               width: 10,
             ),
-            AutoSizeText(
+            Text(
               'support@cipherschools.com',
               maxLines: 1,
               style: textStyleBlack3,
@@ -117,13 +117,14 @@ class HomeContact extends StatelessWidget {
                   },
                   itemBuilder: (_, i) {
                     if (i == 0) {
-                      return const AutoSizeText(
+                      return Text(
                         'Popular Courses',
-                        style: textStyleBlack2,
+                        style: textStyleBlack2.copyWith(
+                            fontWeight: FontWeight.bold),
                         maxLines: 1,
                       );
                     }
-                    return AutoSizeText(
+                    return Text(
                       popularCourses[i - 1],
                       style: textStyleBlack3,
                       maxLines: 1,
@@ -143,13 +144,14 @@ class HomeContact extends StatelessWidget {
                   },
                   itemBuilder: (_, i) {
                     if (i == 0) {
-                      return const AutoSizeText(
-                        'Popular Courses',
-                        style: textStyleBlack2,
+                      return Text(//TODO Auto Text
+                        'Company Info',
+                        style: textStyleBlack2.copyWith(
+                            fontWeight: FontWeight.bold),
                         maxLines: 1,
                       );
                     }
-                    return AutoSizeText(
+                    return Text( // TODO
                       companyInfo[i - 1],
                       style: textStyleBlack3,
                       maxLines: 1,
@@ -170,7 +172,11 @@ class HomeContact extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text('© 2020 CipherSchools • All Rights Reserved '),
+              const Text(
+                '© 2020 CipherSchools • All Rights Reserved ',
+                style: textStyleBlack3,
+                maxLines: 2,
+              ),
               SizedBox(
                 height: 50,
                 child: ListView.separated(

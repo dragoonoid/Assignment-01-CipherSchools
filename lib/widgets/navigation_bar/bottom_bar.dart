@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {
   final int selected;
-  const BottomBar({Key? key, required this.selected}) : super(key: key);
+  final bool isDark;
+  const BottomBar({Key? key, required this.selected, required this.isDark})
+      : super(key: key);
 
   @override
   State<BottomBar> createState() => _BottomBarState();
@@ -18,8 +20,7 @@ class _BottomBarState extends State<BottomBar> {
     setState(() {
       selected = i;
       if (i == 0) {
-        Navigator.pushNamedAndRemoveUntil(
-            context, '/', (route) => false);
+        Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
       } else if (i == 1) {
         Navigator.pushNamedAndRemoveUntil(
             context, '/courses', (route) => false);
@@ -34,7 +35,7 @@ class _BottomBarState extends State<BottomBar> {
       margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
-          color: Colors.white,
+          color: !widget.isDark ? Colors.white : black,
           boxShadow: const [
             BoxShadow(
               color: Colors.grey,
@@ -51,11 +52,17 @@ class _BottomBarState extends State<BottomBar> {
               children: [
                 Icon(
                   Icons.home,
-                  color: selected == 0 ? orange : black,
+                  color: selected == 0
+                      ? orange
+                      : (!widget.isDark ? black : Colors.white),
                 ),
                 Text(
                   'Home',
-                  style: TextStyle(color: selected == 0 ? orange : black),
+                  style: TextStyle(
+                    color: selected == 0
+                        ? orange
+                        : (!widget.isDark ? black : Colors.white),
+                  ),
                 ),
               ],
             ),
@@ -67,11 +74,17 @@ class _BottomBarState extends State<BottomBar> {
               children: [
                 Icon(
                   Icons.home,
-                  color: selected == 1 ? orange : black,
+                  color: selected == 1
+                      ? orange
+                      : (!widget.isDark ? black : Colors.white),
                 ),
                 Text(
                   'Courses',
-                  style: TextStyle(color: selected == 1 ? orange : black),
+                  style: TextStyle(
+                    color: selected == 1
+                        ? orange
+                        : (!widget.isDark ? black : Colors.white),
+                  ),
                 ),
               ],
             ),
@@ -83,11 +96,17 @@ class _BottomBarState extends State<BottomBar> {
               children: [
                 Icon(
                   Icons.compare_rounded,
-                  color: selected == 2 ? orange : black,
+                  color: selected == 2
+                      ? orange
+                      : (!widget.isDark ? black : Colors.white),
                 ),
                 Text(
                   'Trending',
-                  style: TextStyle(color: selected == 2 ? orange : black),
+                  style: TextStyle(
+                    color: selected == 2
+                        ? orange
+                        : (!widget.isDark ? black : Colors.white),
+                  ),
                 ),
               ],
             ),
@@ -99,11 +118,17 @@ class _BottomBarState extends State<BottomBar> {
               children: [
                 Icon(
                   Icons.person,
-                  color: selected == 3 ? orange : black,
+                  color: selected == 3
+                      ? orange
+                      : (!widget.isDark ? black : Colors.white),
                 ),
                 Text(
                   'My Profile',
-                  style: TextStyle(color: selected == 3 ? orange : black),
+                  style: TextStyle(
+                    color: selected == 3
+                        ? orange
+                        : (!widget.isDark ? black : Colors.white),
+                  ),
                 ),
               ],
             ),
