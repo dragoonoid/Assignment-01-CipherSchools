@@ -8,4 +8,3 @@ Cipher School Mobile Application
                       font_awesome_flutter: ^10.4.0 # icons
                       carousel_slider: ^4.2.1  # create carousel
 4) Apk avaiable in the apk folder
-5) Link for direct download of apk: 
