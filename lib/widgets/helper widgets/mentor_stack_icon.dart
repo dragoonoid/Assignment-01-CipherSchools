@@ -1,3 +1,4 @@
+import 'package:cipher_schools/utils/test_data.dart';
 import 'package:flutter/material.dart';
 
 class MentorStackIcon extends StatelessWidget {
@@ -11,14 +12,17 @@ class MentorStackIcon extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-         Positioned(
+        Positioned(
           right: 0,
           child: CircleAvatar(
             radius: 20,
             backgroundColor: Colors.white,
             child: CircleAvatar(
+              backgroundColor: black,
               radius: 17,
-              child: Image.network(s[0],),//NetworkImage   AssetImage Image.asset
+              child: Image.network(
+                s[0],
+              ), //NetworkImage   AssetImage Image.asset
             ),
           ),
         ),
@@ -28,6 +32,7 @@ class MentorStackIcon extends StatelessWidget {
             radius: 20,
             backgroundColor: Colors.white,
             child: CircleAvatar(
+              backgroundColor: black,
               radius: 17,
               child: Image.network(s[0]),
             ),
@@ -39,6 +44,7 @@ class MentorStackIcon extends StatelessWidget {
             radius: 20,
             backgroundColor: Colors.white,
             child: CircleAvatar(
+              backgroundColor: black,
               radius: 17,
               child: Image.network(s[0]),
             ),

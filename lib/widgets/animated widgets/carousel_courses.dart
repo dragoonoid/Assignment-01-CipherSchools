@@ -74,6 +74,7 @@ class _CarouselCoursesState extends State<CarouselCourses> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             CircleAvatar(
+                              backgroundColor: black,
                               radius: 12,
                               backgroundImage:
                                   NetworkImage(e['mentorUrl'] ?? ''),

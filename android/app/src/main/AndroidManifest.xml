@@ -2,7 +2,7 @@
     package="com.example.cipher_schools">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="cipher_schools"
+        android:label="CipherSchools"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

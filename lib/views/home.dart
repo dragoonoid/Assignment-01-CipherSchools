@@ -89,11 +89,11 @@ class _HomeState extends State<Home> {
                     maxLines: 1,
                     text: TextSpan(
                       text: "Welcome to ",
-                      style: textStyleBlack1.copyWith(fontSize: 40),
+                      style: textStyleBlack1.copyWith(fontSize: 35),
                       children: <TextSpan>[
                         TextSpan(
                           text: 'the',
-                          style: textStyleOrange1.copyWith(fontSize: 40),
+                          style: textStyleOrange1.copyWith(fontSize: 35),
                         ),
                       ],
                     ),
@@ -102,11 +102,11 @@ class _HomeState extends State<Home> {
                     maxLines: 1,
                     text: TextSpan(
                       text: "Future",
-                      style: textStyleOrange1.copyWith(fontSize: 40),
+                      style: textStyleOrange1.copyWith(fontSize: 35),
                       children: <TextSpan>[
                         TextSpan(
                           text: ' of Learning!',
-                          style: textStyleBlack1.copyWith(fontSize: 40),
+                          style: textStyleBlack1.copyWith(fontSize: 35),
                         ),
                       ],
                     ),
@@ -192,13 +192,13 @@ class _HomeState extends State<Home> {
                       child: Center(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children:  [
                             Text(
                               'Start Learning Now ',
-                              style: textStyleWhite1,
+                              style: textStyleWhite2.copyWith(fontWeight: FontWeight.bold),
                               overflow: TextOverflow.ellipsis,
                             ),
-                            Icon(
+                            const Icon(
                               Icons.forward,
                               color: Colors.white,
                             ),

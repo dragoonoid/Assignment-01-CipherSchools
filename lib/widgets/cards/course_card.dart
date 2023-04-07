@@ -109,6 +109,7 @@ class CourseCard extends StatelessWidget {
                         children: [
                           CircleAvatar(
                             //  / radius: 15,
+                            backgroundColor: black,
                             backgroundImage: NetworkImage(mp['instUrl'] ?? ''),
                           ),
                           const SizedBox(

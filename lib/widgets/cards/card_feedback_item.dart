@@ -1,4 +1,5 @@
 import 'package:cipher_schools/themes/home_theme.dart';
+import 'package:cipher_schools/utils/test_data.dart';
 import 'package:cipher_schools/widgets/helper%20widgets/stars.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class CardFeedbackItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             CircleAvatar(
+              backgroundColor: black,
               radius: 20,
               backgroundImage: NetworkImage(
                 mp['imageUrl'] ?? '',
