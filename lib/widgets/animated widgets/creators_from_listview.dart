@@ -13,7 +13,6 @@ class CreatorsFromListView extends StatefulWidget {
 class _CreatorsFromListViewState extends State<CreatorsFromListView> {
   final ScrollController controller = ScrollController();
   int currentIndex = 0;
-// TODO does not run upon app opening
   @override
   void initState() {
     super.initState();
@@ -30,17 +29,6 @@ class _CreatorsFromListViewState extends State<CreatorsFromListView> {
         );
       });
     });
-    // SchedulerBinding.instance.addPostFrameCallback((_) {
-    //   double maxLimitOfScroll = controller.position.maxScrollExtent;
-    //   double minLimitOfScroll = controller.position.minScrollExtent;
-    //   animateForwardAndBack(
-    //     maxLimitOfScroll,
-    //     minLimitOfScroll,
-    //     maxLimitOfScroll,
-    //     10,
-    //     controller,
-    //   );
-    // });
   }
 
   @override

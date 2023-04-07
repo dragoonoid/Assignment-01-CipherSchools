@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 class CourseCardGridView extends StatelessWidget {
   final List<Map<String, String>> mp;
   final bool isDark;
-  const CourseCardGridView({Key? key, required this.mp, required this.isDark}) : super(key: key);
+  final int count;
+  const CourseCardGridView({Key? key, required this.mp, required this.isDark, required this.count}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class CourseCardGridView extends StatelessWidget {
           childAspectRatio: 3 / 4,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20),
-      itemCount: mp.length,
+      itemCount: count==-1?mp.length:count,
       itemBuilder: (context, i) {
         return CourseCard(mp: mp[i],isDark: isDark,);
       },

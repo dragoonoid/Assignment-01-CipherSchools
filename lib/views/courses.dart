@@ -179,6 +179,7 @@ class _CoursesViewState extends State<CoursesView> {
                 child: CourseCardGridView(
                   mp: courses,
                   isDark: isDarkTheme,
+                  count: -1,
                 ),
               ),
             ],
@@ -208,7 +209,11 @@ class _CourseSlider extends StatefulWidget {
 
 class _CourseSliderState extends State<_CourseSlider> {
   ScrollController cont = ScrollController();
-
+  @override
+  void dispose() {
+    cont.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

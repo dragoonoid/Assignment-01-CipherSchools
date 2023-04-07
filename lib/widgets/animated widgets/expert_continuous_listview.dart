@@ -1,5 +1,3 @@
-
-
 import 'package:cipher_schools/themes/home_theme.dart';
 import 'package:cipher_schools/utils/test_data.dart';
 import 'package:flutter/material.dart';
@@ -7,10 +5,12 @@ import 'package:flutter/scheduler.dart';
 
 class ExpertContinuousListView extends StatefulWidget {
   final List<Map<String, String>> mp;
-  const ExpertContinuousListView({Key? key, required this.mp}) : super(key: key);
+  const ExpertContinuousListView({Key? key, required this.mp})
+      : super(key: key);
 
   @override
-  State<ExpertContinuousListView> createState() => _ExpertContinuousListViewState();
+  State<ExpertContinuousListView> createState() =>
+      _ExpertContinuousListViewState();
 }
 
 class _ExpertContinuousListViewState extends State<ExpertContinuousListView> {
@@ -20,11 +20,18 @@ class _ExpertContinuousListViewState extends State<ExpertContinuousListView> {
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance.addPostFrameCallback((_) {
-      double maxLimitOfScroll = controller.position.maxScrollExtent;
-      double minLimitOfScroll = controller.position.minScrollExtent;
-      animateForwardAndBack(
-          maxLimitOfScroll, minLimitOfScroll, maxLimitOfScroll, 10, controller);
+    Future.delayed(Duration.zero, () {
+      SchedulerBinding.instance.addPostFrameCallback((_) {
+        double maxLimitOfScroll = controller.position.maxScrollExtent;
+        double minLimitOfScroll = controller.position.minScrollExtent;
+        animateForwardAndBack(
+          maxLimitOfScroll,
+          minLimitOfScroll,
+          maxLimitOfScroll,
+          10,
+          controller,
+        );
+      });
     });
   }
 

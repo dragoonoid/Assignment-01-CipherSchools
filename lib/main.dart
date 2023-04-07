@@ -1,6 +1,6 @@
-import 'package:cipher_schools/themes/home_theme.dart';
 import 'package:cipher_schools/views/courses.dart';
 import 'package:cipher_schools/views/home.dart';
+import 'package:cipher_schools/widgets/animated%20widgets/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,17 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme: const TextTheme(
-          headline1: textStyleOrange1,
-          headline2: textStyleOrange2,
-          headline3: textStyleOrange3,
-          
-        ),
-      ),
       routes: {
         '/': (context) => const Home(),
-        '/courses': (context)=> const CoursesView()// TODO controllers, splash
+        '/courses': (context) => const CoursesView(),
+        '/splash': (context) => const SplashScreen(),
       },
     );
   }

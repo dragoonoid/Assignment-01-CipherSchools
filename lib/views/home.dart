@@ -70,7 +70,8 @@ class _HomeState extends State<Home> {
         showNavContainer: showNavContainer,
       ),
       bottomNavigationBar: const BottomBar(
-        selected: 0,isDark: false,
+        selected: 0,
+        isDark: false,
       ),
       body: Stack(
         children: [
@@ -230,7 +231,7 @@ class _HomeState extends State<Home> {
                       'Creators from',
                       style: textStyleBlack1,
                     ),
-                  ), 
+                  ),
                   Container(
                     margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     height: size.height * 0.1,
@@ -246,6 +247,7 @@ class _HomeState extends State<Home> {
                   CourseCardGridView(
                     mp: courses,
                     isDark: false,
+                    count: 4,
                   ),
                   const SizedBox(height: 30),
                   const Center(

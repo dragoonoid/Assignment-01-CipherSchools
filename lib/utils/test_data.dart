@@ -205,17 +205,51 @@ List<Map<String, String>> courses = [
     'instUrl':
         'https://d3gmywgj71m21w.cloudfront.net/5cf2479a2a7995f728c5c378ac709d70'
   },
+  {
+    'name': 'JavaScript (JS)',
+    'tag': 'Web Development',
+    'videos': '36',
+    'time': '5.1',
+    'image':
+        'https://d3gmywgj71m21w.cloudfront.net/498f10428c3b24c94e57a4bff1176c93',
+    'instName': 'ShrutiCodes',
+    'instUrl':
+        'https://d3gmywgj71m21w.cloudfront.net/5cf2479a2a7995f728c5c378ac709d70'
+  },
+  {
+    'name': 'Cascading Styles Sheets CSS',
+    'tag': 'Web Development',
+    'videos': '24',
+    'time': '3.0',
+    'image':
+        'https://d3gmywgj71m21w.cloudfront.net/bdc64b30d8b2992575b5aa5a3bc06c42',
+    'instName': 'ShrutiCodes',
+    'instUrl':
+        'https://d3gmywgj71m21w.cloudfront.net/5cf2479a2a7995f728c5c378ac709d70'
+  },
+  {
+    'name': 'Hyper Text Markup Language',
+    'tag': 'Web Development',
+    'videos': '21',
+    'time': '2.0',
+    'image':
+        'https://d3gmywgj71m21w.cloudfront.net/728a2d3aab11afa24520305befc0f119',
+    'instName': 'ShrutiCodes',
+    'instUrl':
+        'https://d3gmywgj71m21w.cloudfront.net/5cf2479a2a7995f728c5c378ac709d70'
+  },
+  {
+    'name': 'Web Development',
+    'tag': 'Web Development',
+    'videos': '138',
+    'time': '21.8',
+    'image':
+        'https://d3gmywgj71m21w.cloudfront.net/d503ce11da6c4e393e78e2a48f52172d',
+    'instName': 'ShrutiCodes',
+    'instUrl':
+        'https://d3gmywgj71m21w.cloudfront.net/5cf2479a2a7995f728c5c378ac709d70'
+  },
 ];
-
-// List<String> contactInfo=[
-//   'Join our community on Discord',
-//   'Come together and make a difference! ',
-//   'Connect and grow with our Discord community! ',
-//   'Join our community for an interactive learning experience!',
-//   'Join Discord'
-//   'https://ik.imagekit.io/cipherschools/CipherSchools/discord-screenshot_ae01xzCLS.png',
-
-// ];
 
 List<String> popularCourses = [
   '→ Data Science',
@@ -244,17 +278,6 @@ List<IconData> icon = [
   FontAwesomeIcons.twitter,
 ];
 
-List<String> creatorsFrom = [
-  'Walmart',
-  'Google',
-  'Paypal',
-  'Swiggy',
-  'Amazon',
-  'Oyo',
-  'Dream11',
-  'Intuit',
-  'Microsoft',
-];
 // Carousel list-----------------------
 List<Map<String, String>> mentors = [
   {
@@ -287,6 +310,18 @@ List<Map<String, String>> mentors = [
         'https://ik.imagekit.io/cipherschools/CipherMentors/Shreyas-PayPal.png',
     'role': 'PayPal'
   },
+];
+
+List<String> creatorsFrom = [
+  'Walmart',
+  'Google',
+  'Paypal',
+  'Swiggy',
+  'Amazon',
+  'Oyo',
+  'Dream11',
+  'Intuit',
+  'Microsoft',
 ];
 
 List<Map<String, String>> titles = [

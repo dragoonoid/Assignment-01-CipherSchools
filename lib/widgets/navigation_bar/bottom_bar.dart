@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:cipher_schools/utils/test_data.dart';
+import 'package:cipher_schools/widgets/animated%20widgets/splash.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {
@@ -19,11 +22,31 @@ class _BottomBarState extends State<BottomBar> {
     }
     setState(() {
       selected = i;
+      if(i==2 || i==3){
+        return;
+      }
+      Navigator.push(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) =>
+              const SplashScreen(),
+          transitionDuration: Duration.zero,
+          reverseTransitionDuration: Duration.zero,
+        ),
+      );
+
       if (i == 0) {
-        Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+        Timer(
+          const Duration(seconds: 3),
+          (() => Navigator.pushNamedAndRemoveUntil(
+              context, '/', (route) => false)),
+        );
       } else if (i == 1) {
-        Navigator.pushNamedAndRemoveUntil(
-            context, '/courses', (route) => false);
+        Timer(
+          const Duration(seconds: 3),
+          (() => Navigator.pushNamedAndRemoveUntil(
+              context, '/courses', (route) => false)),
+        );
       }
     });
   }

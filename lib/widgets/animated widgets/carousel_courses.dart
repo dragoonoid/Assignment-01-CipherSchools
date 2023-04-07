@@ -13,7 +13,12 @@ class CarouselCourses extends StatefulWidget {
 
 class _CarouselCoursesState extends State<CarouselCourses> {
   int currentIndex = 0;
-  CarouselController cont = CarouselController();
+  CarouselController? cont = CarouselController();
+  @override
+  void dispose() {
+    cont=null;
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

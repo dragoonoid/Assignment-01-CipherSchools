@@ -144,14 +144,14 @@ class HomeContact extends StatelessWidget {
                   },
                   itemBuilder: (_, i) {
                     if (i == 0) {
-                      return Text(//TODO Auto Text
+                      return Text(
                         'Company Info',
                         style: textStyleBlack2.copyWith(
                             fontWeight: FontWeight.bold),
                         maxLines: 1,
                       );
                     }
-                    return Text( // TODO
+                    return Text( 
                       companyInfo[i - 1],
                       style: textStyleBlack3,
                       maxLines: 1,
