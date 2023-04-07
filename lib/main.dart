@@ -2,7 +2,7 @@ import 'package:cipher_schools/views/courses.dart';
 import 'package:cipher_schools/views/home.dart';
 import 'package:cipher_schools/widgets/animated%20widgets/splash.dart';
 import 'package:flutter/material.dart';
-
+/* */
 void main() {
   runApp(const MyApp());
 }
